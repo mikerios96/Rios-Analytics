@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Rios Civic Analytics — Data • Maps • Insights</title>
+  <meta name="description" content="Data analysis, mapping, and policy research for governments and nonprofits. Clear analysis, beautiful maps, better decisions." />
+  <meta name="theme-color" content="#0e63ff" />
+  <link rel="preload" href="styles.css" as="style">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a href="#" class="brand" aria-label="Rios Civic Analytics home">
+        <img src="assets/logo.svg" alt="" width="36" height="36" />
+        <span>Rios Civic Analytics</span>
+      </a>
+
+      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+      </button>
+
+      <nav id="nav" class="nav">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact" class="btn btn--small">Book a consult</a>
+        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">🌓</button>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero">
+      <div class="container grid grid--2">
+        <div>
+          <h1>Data, maps &amp; insights for civic impact.</h1>
+          <p class="lead">I help governments and nonprofits make better decisions with clear analysis and beautiful maps. Project‑based, tool‑agnostic, budget‑friendly.</p>
+          <div class="cta-row">
+            <a href="#contact" class="btn">Book a consult</a>
+            <a href="#projects" class="btn btn--ghost">See projects</a>
+          </div>
+
+          <ul class="stack-list">
+            <li><span class="tag">R / RStudio</span></li>
+            <li><span class="tag">ArcGIS</span></li>
+            <li><span class="tag">Maptitude</span></li>
+            <li><span class="tag">Tableau / Power BI</span></li>
+          </ul>
+        </div>
+        <div class="hero-card">
+          <div class="card">
+            <h3 class="card-title">Recent Highlights</h3>
+            <ul class="checks">
+              <li>Redistricting scenario explorer for a statewide analysis</li>
+              <li>Voter access dashboard with precinct-level insights</li>
+              <li>Public records pipeline for policy research</li>
+            </ul>
+            <p class="muted">Need something similar? Let's talk.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="section">
+      <div class="container">
+        <h2>Services</h2>
+        <div class="grid grid--3">
+          <article class="card">
+            <h3>Data Analysis</h3>
+            <p>Descriptive statistics, QA, and reproducible reports. Clear methods, clean outputs, defensible results.</p>
+            <ul class="bullets">
+              <li>Data cleaning &amp; validation</li>
+              <li>Reproducible R Markdown reports</li>
+              <li>Stakeholder‑ready summaries</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Mapping &amp; GIS</h3>
+            <p>Interactive maps and printable atlases for planning, equity, and compliance.</p>
+            <ul class="bullets">
+              <li>ArcGIS / Maptitude workflows</li>
+              <li>Census &amp; voter files</li>
+              <li>Web maps &amp; map books</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Policy Research</h3>
+            <p>Public records, legal scans, and literature reviews with plain‑language briefs.</p>
+            <ul class="bullets">
+              <li>Records requests &amp; tracking</li>
+              <li>Comparative policy analysis</li>
+              <li>Actionable recommendations</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="section section--alt">
+      <div class="container">
+        <h2>Projects</h2>
+        <div class="grid grid--3">
+          <article class="project">
+            <div class="placeholder" role="img" aria-label="California redistricting explorer preview"></div>
+            <h3>California Redistricting Explorer</h3>
+            <p class="muted">Scenario comparisons, compactness metrics, and community visualizations.</p>
+          </article>
+          <article class="project">
+            <div class="placeholder" role="img" aria-label="Voter access dashboard preview"></div>
+            <h3>Voter Access Dashboard</h3>
+            <p class="muted">Turnout, language access, and polling place equity at a glance.</p>
+          </article>
+          <article class="project">
+            <div class="placeholder" role="img" aria-label="Public records pipeline preview"></div>
+            <h3>Public Records Pipeline</h3>
+            <p class="muted">Automated intake, tracking, and synthesis for faster answers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section">
+      <div class="container grid grid--2">
+        <div>
+          <h2>About</h2>
+          <p>Hi, I'm <strong>Jasmine Rios, RN &amp; data analyst</strong>. I work with civic organizations to turn messy datasets into clear, ethical insights. I love neutral designs, clean layouts, and maps that actually help people.</p>
+          <p class="muted">Tools I use: R, ArcGIS, Maptitude, QGIS, Airtable, Google Sheets, Tableau, Power BI.</p>
+        </div>
+        <div class="card">
+          <h3 class="card-title">Why work with me</h3>
+          <ul class="checks">
+            <li>Project‑based: no long contracts</li>
+            <li>Transparent methods, open formats</li>
+            <li>Plain‑language results your board can use</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section section--alt">
+      <div class="container">
+        <h2>Contact</h2>
+        <p class="muted">Use the form below or email <a href="mailto:you@example.com">you@example.com</a>. (Swap this with your real email.)</p>
+        <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/your_form_id">
+          <div class="grid grid--2">
+            <label>Full name
+              <input required type="text" name="name" placeholder="Your name">
+            </label>
+            <label>Email
+              <input required type="email" name="email" placeholder="you@example.com">
+            </label>
+          </div>
+          <label>Message
+            <textarea required name="message" rows="6" placeholder="Tell me about your project..."></textarea>
+          </label>
+          <button class="btn" type="submit">Send</button>
+          <p id="formStatus" class="muted" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <strong>Rios Civic Analytics</strong><br>
+        <small>&copy; <span id="year"></span> All rights reserved.</small>
+      </div>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script defer src="script.js"></script>
+</body>
+</html>
