@@ -1,183 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Rios Civic Analytics — Data • Maps • Insights</title>
-  <meta name="description" content="Data analysis, mapping, and policy research for governments and nonprofits. Clear analysis, beautiful maps, better decisions." />
-  <meta name="theme-color" content="#0e63ff" />
-  <link rel="preload" href="styles.css" as="style">
-  <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rios Civic Analytics</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --teal: #0F8B8D;
+      --red: #E11D48;
+      --blue: #1D4ED8;
+      --gray: #4B5563;
+      --light-gray: #f9fafb;
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: var(--gray);
+      background: #fff;
+    }
+
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      border-bottom: 1px solid #eee;
+      position: sticky;
+      top: 0;
+      background: #fff;
+      z-index: 10;
+    }
+    nav a {
+      margin-left: 1.5rem;
+      text-decoration: none;
+      color: var(--gray);
+      font-weight: 600;
+      transition: color 0.2s;
+    }
+    nav a:hover {
+      color: var(--teal);
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 2rem;
+      background: linear-gradient(to bottom right, #ffffff, #f0fdfd);
+    }
+    .hero h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+    .hero p {
+      font-size: 1.25rem;
+      margin: 1rem auto;
+      max-width: 650px;
+    }
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      margin: 0.5rem;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: #fff;
+    }
+    .btn-outline {
+      border: 2px solid var(--teal);
+      color: var(--teal);
+    }
+    section {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      color: var(--teal);
+      margin-bottom: 2rem;
+      text-align: center;
+    }
+
+    /* Services */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      text-align: center;
+    }
+    .service-card {
+      background: var(--light-gray);
+      padding: 2rem;
+      border-radius: 12px;
+      transition: transform 0.2s;
+    }
+    .service-card:hover {
+      transform: translateY(-4px);
+    }
+    .service-card h3 {
+      font-size: 1.4rem;
+      color: var(--teal);
+      margin-bottom: 1rem;
+    }
+
+    /* Projects */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      border: 1px solid #eee;
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+      transition: transform 0.2s;
+    }
+    .project-card:hover {
+      transform: translateY(-4px);
+    }
+    .project-card img {
+      width: 100%;
+      height: 180px;
+      object-fit: cover;
+    }
+    .project-card h4 {
+      margin: 1rem;
+      color: var(--teal);
+    }
+    .project-card p {
+      margin: 0 1rem 1.5rem;
+    }
+
+    /* About */
+    .about {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      gap: 1.5rem;
+    }
+    .about img {
+      width: 160px;
+      height: 160px;
+      border-radius: 50%;
+      border: 4px solid var(--teal);
+    }
+
+    /* Contact */
+    form {
+      display: flex;
+      flex-direction: column;
+      max-width: 600px;
+      margin: auto;
+    }
+    form input, form textarea {
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+    form button {
+      background: var(--teal);
+      color: #fff;
+      border: none;
+      padding: 0.75rem;
+      border-radius: 8px;
+      font-size: 1rem;
+      font-weight: 600;
+      cursor: pointer;
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: var(--light-gray);
+      font-size: 0.9rem;
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header">
-    <div class="container nav-wrap">
-      <a href="#" class="brand" aria-label="Rios Civic Analytics home">
-        <img src="assets/logo.svg" alt="" width="36" height="36" />
-        <span>Rios Civic Analytics</span>
-      </a>
-
-      <button class="nav-toggle" aria-expanded="false" aria-controls="nav" aria-label="Open menu">
-        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
-      </button>
-
-      <nav id="nav" class="nav">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact" class="btn btn--small">Book a consult</a>
-        <button id="themeToggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle theme">🌓</button>
-      </nav>
-    </div>
+  <header>
+    <div><img src="RCA_logo_high_def.png" alt="RCA logo" height="50"></div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
   </header>
 
-  <main id="main">
-    <section class="hero">
-      <div class="container grid grid--2">
-        <div>
-          <h1>Data, maps &amp; insights for civic impact.</h1>
-          <p class="lead">I help governments and nonprofits make better decisions with clear analysis and beautiful maps. Project‑based, tool‑agnostic, budget‑friendly.</p>
-          <div class="cta-row">
-            <a href="#contact" class="btn">Book a consult</a>
-            <a href="#projects" class="btn btn--ghost">See projects</a>
-          </div>
+  <section class="hero">
+    <h1>Data, Maps, and Insight for Civic Impact</h1>
+    <p>Helping governments and nonprofits turn complex data into clear, actionable insights.</p>
+    <a href="#contact" class="btn btn-primary">Book a Consult</a>
+    <a href="#projects" class="btn btn-outline">See Projects</a>
+  </section>
 
-          <ul class="stack-list">
-            <li><span class="tag">R / RStudio</span></li>
-            <li><span class="tag">ArcGIS</span></li>
-            <li><span class="tag">Maptitude</span></li>
-            <li><span class="tag">Tableau / Power BI</span></li>
-          </ul>
-        </div>
-        <div class="hero-card">
-          <div class="card">
-            <h3 class="card-title">Recent Highlights</h3>
-            <ul class="checks">
-              <li>Redistricting scenario explorer for a statewide analysis</li>
-              <li>Voter access dashboard with precinct-level insights</li>
-              <li>Public records pipeline for policy research</li>
-            </ul>
-            <p class="muted">Need something similar? Let's talk.</p>
-          </div>
-        </div>
+  <section id="services">
+    <h2>Services</h2>
+    <div class="services">
+      <div class="service-card">
+        <h3>📊 Data Analysis</h3>
+        <p>Turn raw datasets into actionable insights with advanced statistical methods and visualization.</p>
       </div>
-    </section>
-
-    <section id="services" class="section">
-      <div class="container">
-        <h2>Services</h2>
-        <div class="grid grid--3">
-          <article class="card">
-            <h3>Data Analysis</h3>
-            <p>Descriptive statistics, QA, and reproducible reports. Clear methods, clean outputs, defensible results.</p>
-            <ul class="bullets">
-              <li>Data cleaning &amp; validation</li>
-              <li>Reproducible R Markdown reports</li>
-              <li>Stakeholder‑ready summaries</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Mapping &amp; GIS</h3>
-            <p>Interactive maps and printable atlases for planning, equity, and compliance.</p>
-            <ul class="bullets">
-              <li>ArcGIS / Maptitude workflows</li>
-              <li>Census &amp; voter files</li>
-              <li>Web maps &amp; map books</li>
-            </ul>
-          </article>
-          <article class="card">
-            <h3>Policy Research</h3>
-            <p>Public records, legal scans, and literature reviews with plain‑language briefs.</p>
-            <ul class="bullets">
-              <li>Records requests &amp; tracking</li>
-              <li>Comparative policy analysis</li>
-              <li>Actionable recommendations</li>
-            </ul>
-          </article>
-        </div>
+      <div class="service-card">
+        <h3>🗺️ Mapping & GIS</h3>
+        <p>Create clear, interactive maps that reveal patterns in geography, demographics, and policy.</p>
       </div>
-    </section>
-
-    <section id="projects" class="section section--alt">
-      <div class="container">
-        <h2>Projects</h2>
-        <div class="grid grid--3">
-          <article class="project">
-            <div class="placeholder" role="img" aria-label="California redistricting explorer preview"></div>
-            <h3>California Redistricting Explorer</h3>
-            <p class="muted">Scenario comparisons, compactness metrics, and community visualizations.</p>
-          </article>
-          <article class="project">
-            <div class="placeholder" role="img" aria-label="Voter access dashboard preview"></div>
-            <h3>Voter Access Dashboard</h3>
-            <p class="muted">Turnout, language access, and polling place equity at a glance.</p>
-          </article>
-          <article class="project">
-            <div class="placeholder" role="img" aria-label="Public records pipeline preview"></div>
-            <h3>Public Records Pipeline</h3>
-            <p class="muted">Automated intake, tracking, and synthesis for faster answers.</p>
-          </article>
-        </div>
+      <div class="service-card">
+        <h3>📑 Policy Research</h3>
+        <p>Support decision-making with transparent, evidence-based research and reporting.</p>
       </div>
-    </section>
-
-    <section id="about" class="section">
-      <div class="container grid grid--2">
-        <div>
-          <h2>About</h2>
-          <p>Hi, I'm <strong>Jasmine Rios, RN &amp; data analyst</strong>. I work with civic organizations to turn messy datasets into clear, ethical insights. I love neutral designs, clean layouts, and maps that actually help people.</p>
-          <p class="muted">Tools I use: R, ArcGIS, Maptitude, QGIS, Airtable, Google Sheets, Tableau, Power BI.</p>
-        </div>
-        <div class="card">
-          <h3 class="card-title">Why work with me</h3>
-          <ul class="checks">
-            <li>Project‑based: no long contracts</li>
-            <li>Transparent methods, open formats</li>
-            <li>Plain‑language results your board can use</li>
-          </ul>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section section--alt">
-      <div class="container">
-        <h2>Contact</h2>
-        <p class="muted">Use the form below or email <a href="mailto:you@example.com">you@example.com</a>. (Swap this with your real email.)</p>
-        <form id="contactForm" class="contact-form" method="POST" action="https://formspree.io/f/your_form_id">
-          <div class="grid grid--2">
-            <label>Full name
-              <input required type="text" name="name" placeholder="Your name">
-            </label>
-            <label>Email
-              <input required type="email" name="email" placeholder="you@example.com">
-            </label>
-          </div>
-          <label>Message
-            <textarea required name="message" rows="6" placeholder="Tell me about your project..."></textarea>
-          </label>
-          <button class="btn" type="submit">Send</button>
-          <p id="formStatus" class="muted" role="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-  </main>
-
-  <footer class="site-footer">
-    <div class="container footer-grid">
-      <div>
-        <strong>Rios Civic Analytics</strong><br>
-        <small>&copy; <span id="year"></span> All rights reserved.</small>
-      </div>
-      <nav class="footer-nav">
-        <a href="#services">Services</a>
-        <a href="#projects">Projects</a>
-        <a href="#about">About</a>
-        <a href="#contact">Contact</a>
-      </nav>
     </div>
-  </footer>
+  </section>
 
-  <script defer src="script.js"></script>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x180?text=Redistricting+Explorer" alt="">
+        <h4>Redistricting Explorer</h4>
+        <p>Interactive mapping tools to visualize district fairness and compliance.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x180?text=Voter+Access+Dashboard" alt="">
+        <h4>Voter Access Dashboard</h4>
+        <p>Data platform to monitor ballot access and voting resources in real time.</p>
+      </div>
+      <div class="project-card">
+        <img src="https://via.placeholder.com/400x180?text=Records+Pipeline" alt="">
+        <h4>Records Pipeline</h4>
+        <p>Automated processing of public records for faster analysis and reporting.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <h2>About</h2>
+    <div class="about">
+      <img src="https://via.placeholder.com/160" alt="Founder headshot">
+      <p><strong>Rios Civic Analytics</strong> helps governments and nonprofits turn complex data into clear, actionable insights. Our work is project-based, transparent, and designed to empower communities with knowledge.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Rios Civic Analytics. All rights reserved.</p>
+  </footer>
 </body>
 </html>
